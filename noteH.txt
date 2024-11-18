@@ -1,0 +1,4 @@
+UI -> chakra UI
+icon -> tabler icons
+animation -> framer motions
+npm install react-fast-marquee --save

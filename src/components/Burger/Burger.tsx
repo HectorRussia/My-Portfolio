@@ -13,7 +13,7 @@ const BurgerFramer = () => {
                     <li className='py-[0.7rem] md:py-[2rem]'>Home</li>
                     <li className='py-[0.7rem] md:py-[2rem]'>About Me</li>
                     <li className='py-[0.7rem] md:py-[2rem]'>Skill</li>
-                    <li className='py-[0.7rem] md:py-[2rem]'>Project</li>
+                    <li className='py-[0.7rem] md:py-[2rem]'>Projects</li>
                     <li className="py-[0.7rem] md:py-[2rem]">Resume</li>
                     <li className='py-[0.7rem] md:py-[2rem]'>Contact</li>
                 </ul>

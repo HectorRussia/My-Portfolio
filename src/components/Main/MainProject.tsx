@@ -1,5 +1,6 @@
 import Lottie from 'lottie-react'
 import education  from '../../json/education.json';
+import AnimatedCounter from '../NumberCounter.tsx/NumberCounter';
 
 const MainProject = () => {
   return (
@@ -7,7 +8,8 @@ const MainProject = () => {
          {/*  Project */}
         <div className="relative flex flex-col justify-center items-center mt-[3rem]"> 
                   <h1 className="text-1xl ml-[1rem] md:text-4xl lg:text-5xl text-white font-bold text-balance md:mt-[1rem] lg:mt-[1rem] ">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-700 to-indigo-600">Projects</span> 
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-700 to-indigo-600 mx-3">Projects</span>
+                    <AnimatedCounter from={0} to={20}/> 
                   </h1>
                   <Lottie animationData={education} loop={true} className="h-[15rem] md:h-[25rem] lg:h-[25rem] mt-[1rem] "></Lottie>
         </div>

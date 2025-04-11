@@ -20,11 +20,10 @@ const AnimatedCounter = ({
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true });
 
-  useIsomorphicLayoutEffect(() => {
+  const startAnimation = () => {
     const element = ref.current;
 
     if (!element) return;
-    if (!inView) return;
 
     // Set initial value
     element.textContent = String(from);
@@ -36,11 +35,15 @@ const AnimatedCounter = ({
     }
 
     const controls = animate(from, to, {
-      duration: 10,
+      duration: 5,
       ease: "easeOut",
       ...animationOptions,
       onUpdate(value) {
         element.textContent = value.toFixed(0);
+      },
+      onComplete() {
+        // Restart animation after completion
+        startAnimation();
       },
     });
 
@@ -48,7 +51,13 @@ const AnimatedCounter = ({
     return () => {
       controls.stop();
     };
-  }, [ref, inView, from, to]);
+  };
+
+  useIsomorphicLayoutEffect(() => {
+    if (inView) {
+      startAnimation();
+    }
+  }, [inView]);
 
   return <span ref={ref} />;
 };

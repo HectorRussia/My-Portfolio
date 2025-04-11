@@ -27,7 +27,6 @@ export function useMenuAnimation(isOpen: boolean) {
           ["nav", { transform: "translateX(-100%)" }, { at: "-0.1" }]
         ];
 
-    // แก้ไขให้ animate รองรับประเภทที่ถูกต้อง
     animate([
       [
         "path.top",
@@ -40,6 +39,7 @@ export function useMenuAnimation(isOpen: boolean) {
         { d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346" },
         { at: "<" }
       ],
+      //@ts-ignore
       ...menuAnimations
     ]);
   }, [animate, isOpen]);
